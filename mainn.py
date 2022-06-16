@@ -19,7 +19,7 @@ for cuadro in cuadros_rsp:
 
 
 def menu():
-    print(Fore.MAGENTA + '### IMAGENES ESPACIALES ###')
+    print(Fore.MAGENTA + '-------- IMAGENES ESPACIALES --------')
     print(Fore.RESET)
 
     while True:
@@ -28,13 +28,13 @@ def menu():
         print("3) Carrito")
         print('4) Salir del programa')
 
-        option = input('<<')
+        option = input('>> ')
 
         if option == '1':
             for cuadro in cuadros:
                 print(cuadro)
             print('Coloca el ID de la imagen que desee')
-            id_cuadro = input('<<')
+            id_cuadro = input('>> ')
 
 
 
@@ -53,7 +53,7 @@ def menu():
             medidas = input('Coloca la opcion que desees: >>')
 
             print('Elije la opcion que desee: Galaxia, Estrellas o Agujero negro')
-            imagen = input('<<')
+            imagen = input('>> ')
 
             mi_cuadro = CuadroNuevo(medidas, imagen)
             print(mi_cuadro)
@@ -77,7 +77,7 @@ def menu():
 
 #CODIGO:
 
-#menu()
+menu()
 
 
 
