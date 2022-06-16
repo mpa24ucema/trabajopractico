@@ -1,0 +1,28 @@
+[
+  {
+    "nombre": "Alberto",
+    "apellido": "Osorio",
+    "numero_telefonico": "11-4582-9904",
+    "email": "alberto.osorio@gmail.com",
+    "numero_de_compra":
+  }
+},
+  {
+    "nombre": "Mariana",
+    "apellido": "Perez",
+    "numero_telefonico": "11-4091-8294",
+    "email": "marperez@gmail.com",
+    "numero_de_compra":
+  }
+},
+  {
+    "nombre": "Francisco",
+    "apellido": "Rodriguez",
+    "numero_telefonico": "11-2201-3373",
+    "email": "franrodriguez@gmail.com",
+    "numero_de_compra":
+
+  }
+}
+]
+
