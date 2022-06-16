@@ -1,4 +1,3 @@
-print("hola")
 import requests
 from cuadros import Cuadro
 from cuadros import CuadroNuevo
