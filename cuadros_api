@@ -1,0 +1,74 @@
+from flask import Flask, jsonify, request
+
+app = Flask(_name_)
+
+
+#en el numero de compra habria que hacer que invoque la funcion generadora al azar
+clientes = [ {
+    "nombre": "Alberto",
+    "apellido": "Osorio",
+    "numero_telefonico": "11-4582-9904",
+    "email": "alberto.osorio@gmail.com",
+    "numero_de_compra": "111"
+  },
+  {
+    "nombre": "Mariana",
+    "apellido": "Aliaga",
+    "numero_telefonico": "11-4091-8294",
+    "email": "marperez@gmail.com",
+    "numero_de_compra": '112'
+  },
+  {
+    "nombre": "Francisco",
+    "apellido": "Rodriguez",
+    "numero_telefonico": "11-2201-3373",
+    "email": "franrodriguez@gmail.com",
+    "numero_de_compra":'113'
+
+  } ]
+
+@app.route("/clientes", methods=["GET"])
+def clientes_existentes():
+    return jsonify({"Clientes": clientes, "status": "ok"})
+
+@app.route("/clientes/<numero_de_compra>", methods=["GET"])
+def get_cliente(numero_de_compra):
+    for c in clientes:
+        if c["numero_de_compra"] == numero_de_compra:
+            return jsonify({"Cliente": c, "busqueda": numero_de_compra, "status": "ok"})
+    return jsonify({"Busqueda": cliente_id, "status": "Not found"})
+
+@app.route("/clientes", methods= ["POST"])
+def clientes_post():
+    body = request.json
+    nombre = body["nombre"]
+    apellido = body["apellido"]
+    email = body["email"]
+    numero_de_compra = body["numero_de_compra"]
+    numero_telefonico = body["numero_telefonico"]
+    nuevo_cliente = {"nombre": nombre, "apellido": apellido, "email": email, "numero de compra": numero_de_compra, "numero telefonico": numero_telefonico}
+    return jsonify({"Cliente": nuevo_cliente, "status": "ok"})
+
+@app.route("/clientes/<numero_de_compra>", methods= ["PUT"])
+def clientes_put(numero_de_compra):
+    body = request.json
+    nombre = body["nombre"]
+    apellido = body["apellido"]
+    email = body["email"]
+    numero_de_compra = body["numero_de_compra"]
+    numero_telefonico = body["numero_telefonico"]
+    for c in clientes:
+        if c["numero_de_compra"] == numero_de_compra:
+            return jsonify({"Cliente":{"nombre": nombre, "apellido": apellido, "email": email, "numero de compra": numero_de_compra, "numero telefonico": numero_telefonico}, "busqueda": numero_de_compra, "status": "ok"})
+    return jsonify({"busqueda": numero_de_compra, "status": "not found"})
+
+@app.route("/clientes/<numero_de_compra>", methods= ["DELETE"])
+def clientes_delete(numero_de_compra):
+    for c in clientes:
+        if c["numero_de_compra"] == numero_de_compra:
+            return jsonify({"cliente": c, "busqueda": numero_de_compra, "status": "ok"})
+    return jsonify({"busqueda": numero_de_compra, "status": "not found"})
+
+
+if _name_ == "_main_":
+    app.run(debug=True, port=4005)
