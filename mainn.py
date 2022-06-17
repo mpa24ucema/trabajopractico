@@ -19,7 +19,7 @@ for cuadro in cuadros_rsp:
 
 
 def menu():
-    print(Fore.MAGENTA + '-------- IMAGENES ESPACIALES --------')
+    print(Fore.MAGENTA + '-------- 🌟 IMAGENES ESPACIALES 🌟 --------')
     print(Fore.RESET)
 
     while True:
